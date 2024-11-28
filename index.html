@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DiagnostIA</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <!-- Acessando a biblioteca jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>DiagnostIA</h1>
+            <p class="subtitle">IA de diagnósticos médicos</p>
+            <form>
+                <div class="form-group">
+                    <label for="nome">Nome do paciente:</label>
+                    <input type="text" id="nome" placeholder="Nome completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="sintomas">Sintomas:</label>
+                    <textarea id="sintomas" placeholder="Descreva os sintomas" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="previa">Resultado:</label>
+                    <textarea id="previa" disabled></textarea>
+                </div>
+                <div class="box-button">
+                    <button type="button" class="pdf centralizar" onclick="GerarPDF()" disabled><img class="icon" src="img/icon_bloqueio.png" alt=""> Gerar PDF</button>
+                    <button type="button" class="consulta centralizar" onclick="chamarGroqAPI()" ><img class="icon" src="img/icon_consulta.png" alt=""> Consultar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
