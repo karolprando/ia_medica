@@ -66,6 +66,7 @@ function requestBody(text) {
     };
 }
 
+
 // todo-Função ligada ao segundo botão, que chama a API e libera o botão PDF
 async function chamarOpenAIAPI() {
     var sint = document.getElementById('sintomas').value;
@@ -80,6 +81,7 @@ async function chamarOpenAIAPI() {
         consulta.innerHTML = `<img class="icon loader" src="img/icon_loading.png" alt="">Loading...`;
 
         try {
+            console.log(endpoint, apiKey, requestBody(sint));
             const response = await fetch(endpoint, { 
                 method: 'POST',
                 headers: {
